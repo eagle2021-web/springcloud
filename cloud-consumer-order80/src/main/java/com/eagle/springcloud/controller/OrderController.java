@@ -17,7 +17,7 @@ public class OrderController {
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Boolean> create( Payment payment){
-        log.info("80,create");
+        log.info("80create");
         log.info(payment.getId() + "");
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create",payment,CommonResult.class);
     }
