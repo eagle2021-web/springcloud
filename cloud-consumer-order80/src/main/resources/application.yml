@@ -1,0 +1,13 @@
+server:
+  port: 80
+  devtools:
+    restart:
+      # 开启热部署（更改文件后，自动重启）
+      enabled: true
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true

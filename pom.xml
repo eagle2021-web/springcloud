@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>cloud-provider-payment8001</module>
+        <module>cloud-consumer-order80</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -40,6 +41,11 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
+
+                <!-- 防止将依赖传递到其他模块中 -->
+                <optional>true</optional>
+                <!-- 只在运行时起作用，打包时不打进去（防止线上执行打包后的程序，启动文件监听线程File Watcher，耗费大量的内存资源） -->
+                <scope>runtime</scope>
                 <version>2.3.10.RELEASE</version>
             </dependency>
 
@@ -104,6 +110,21 @@
         </dependencies>
     </dependencyManagement>
     <build>
+<!--        自动热更新部署 第二步配置。 第一步是引入 -->
+<!--        第四步 ctrl + shift + alt + / 勾勾2个-->
+<!--        <finalName>my_spring_cloud</finalName>-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.10.RELEASE</version>
+                <configuration>
+                    <!-- devtools依赖此配置（否则，devtools不生效）。 -->
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
         <!--        <plugins>-->
         <!--            <plugin>-->
         <!--                <groupId>org.springframework.boot</groupId>-->

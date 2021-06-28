@@ -1,4 +1,4 @@
-package com.eagle.my_spring_cloud.entity;
+package com.eagle.springcloud.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -3,10 +3,20 @@ server:
 
 spring:
   application:
-    name: clond-payment-service
+    name: cloud-payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
     url: jdbc:mysql://localhost:3306/spring_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+      ## 设置哪些资源变动后不触发热部署，会覆盖默认的exclude内容（资源不会触发重启，但会触发实时重新加载）
+      # exclude: WEB-INF/**,static/**
+      ## 监控额外的路径（优先于exclude）
+      # additional-paths: src/main/java
