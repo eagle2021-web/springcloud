@@ -5,6 +5,7 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-api-commons</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -117,7 +118,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.10.RELEASE</version>
+                <version>2.2.1.RELEASE</version>
                 <configuration>
                     <!-- devtools依赖此配置（否则，devtools不生效）。 -->
                     <fork>true</fork>

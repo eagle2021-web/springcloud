@@ -69,6 +69,16 @@
             <version>2.2.1.RELEASE</version>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+<!--            <version>3.4.1</version>-->
+        </dependency>
+        <dependency>
+            <groupId>com.eagle</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
 <!--        <dependency>-->
 <!--            <groupId>com.alibaba</groupId>-->

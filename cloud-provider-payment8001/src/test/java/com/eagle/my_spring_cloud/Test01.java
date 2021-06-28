@@ -1,7 +1,7 @@
 package com.eagle.my_spring_cloud;
 
-import com.eagle.my_spring_cloud.entity.Payment;
 import com.eagle.my_spring_cloud.mapper.PaymentMapper;
+import com.eagle.springcloud.entity.Payment;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,8 @@
 package com.eagle.my_spring_cloud.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.eagle.my_spring_cloud.entity.CommonResult;
-import com.eagle.my_spring_cloud.entity.Payment;
-import com.eagle.my_spring_cloud.service.PaymentService;
 import com.eagle.my_spring_cloud.service.impl.PaymentServiceImpl;
+import com.eagle.springcloud.entity.CommonResult;
+import com.eagle.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 

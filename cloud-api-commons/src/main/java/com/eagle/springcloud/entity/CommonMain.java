@@ -1,12 +1,9 @@
-package com.eagle.springcloud;
-
+package com.eagle.springcloud.entity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 @SpringBootApplication
-public class OrderMain80 {
-
+public class CommonMain {
     public static void main(String[] args) {
-        SpringApplication.run(OrderMain80.class,args);
+        SpringApplication.run(CommonMain.class,args);
     }
 }
