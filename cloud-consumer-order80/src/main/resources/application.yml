@@ -1,13 +1,18 @@
 server:
   port: 80
-  devtools:
-    restart:
-      # 开启热部署（更改文件后，自动重启）
-      enabled: true
 spring:
-  devtools:
-    livereload:
-      enabled: true
-    remote:
-      restart:
-        enabled: true
+  application:
+    name: springcloud-client80
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+    instance-id: ${spring.application.name}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:123456@localhost:7001/eureka/
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
