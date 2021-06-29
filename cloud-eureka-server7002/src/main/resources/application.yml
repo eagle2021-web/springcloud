@@ -1,8 +1,8 @@
 server:
-  port: 7001
+  port: 7002
 spring:
   application:
-    name: springcloud-register
+    name: springcloud-register7002
   security:
     filter:
       order: 100
@@ -12,7 +12,7 @@ spring:
       password: 123456
 eureka:
   instance:
-    hostname: eureka7001.com
+    hostname: eureka7002.com #实例名字？
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
@@ -20,7 +20,8 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://admin:123456@eureka7002.com:7002/eureka/,http://admin:123456@eureka7003.com:7003/eureka/
+      #注册到集群的其它服务器
+      defaultZone: http://admin:123456@eureka7001.com:7001/eureka/,http://admin:123456@eureka7003.com:7003/eureka/
   server:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 60000

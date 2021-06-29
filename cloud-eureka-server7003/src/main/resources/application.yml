@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 7003
 spring:
   application:
     name: springcloud-register
@@ -12,7 +12,7 @@ spring:
       password: 123456
 eureka:
   instance:
-    hostname: eureka7001.com
+    hostname: eureka7003.com
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
@@ -20,7 +20,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://admin:123456@eureka7002.com:7002/eureka/,http://admin:123456@eureka7003.com:7003/eureka/
+      defaultZone: http://admin:123456@eureka7002.com:7002/eureka/,http://admin:123456@eureka7001.com:7001/eureka/
   server:
     enable-self-preservation: true
     eviction-interval-timer-in-ms: 60000
