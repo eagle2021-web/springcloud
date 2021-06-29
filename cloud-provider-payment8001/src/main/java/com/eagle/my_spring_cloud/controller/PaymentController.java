@@ -5,13 +5,18 @@ import com.eagle.springcloud.entity.CommonResult;
 import com.eagle.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @Slf4j
 public class PaymentController {
+    @Resource
+    private EurekaDiscoveryClient eurekaDiscoveryClient;
     @Resource
     private PaymentServiceImpl paymentServiceImpl;
     @Value("${server.port}")
@@ -37,5 +42,13 @@ public class PaymentController {
         }else {
             return new CommonResult<>(444,"没有对应记录，查询ID" + id, null);
         }
+    }
+    @GetMapping(value = {"/payment/discovery"})
+    public Object discovery(){
+        List<ServiceInstance> instances = eurekaDiscoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getInstanceId() + instance.getHost() + instance.getPort() + instance.getUri());
+        }
+        return this.eurekaDiscoveryClient;
     }
 }
