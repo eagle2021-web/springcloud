@@ -3,7 +3,9 @@ package com.eagle.springcloud.controller;
 import com.eagle.springcloud.entity.CommonResult;
 import com.eagle.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -19,6 +21,7 @@ public class OrderController {
     public CommonResult<Boolean> create( Payment payment){
         log.info("80create");
         log.info(payment.getId() + "");
+        //public <T> T postForObject(String url, @Nullable Object request, Class<T> responseType, Map<String, ?> uriVariables)
         return restTemplate.postForObject(PAYMENT_URL + "/payment/create",payment,CommonResult.class);
     }
     @GetMapping("/consumer/payment/get/{id}")

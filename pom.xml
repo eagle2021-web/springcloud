@@ -10,6 +10,7 @@
         <module>cloud-eureka-server7001</module>
         <module>cloud-eureka-server7002</module>
         <module>cloud-eureka-server7003</module>
+        <module>cloudalibaba-provider-payment9001</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,7 +32,17 @@
 
     <!--    父工程依赖。子模块继承之后，提供作用：锁定版本 + 子module不用写groupId和version-->
     <dependencyManagement>
+
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <type>pom</type>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>

@@ -2,17 +2,25 @@ server:
   port: 80
 spring:
   application:
+    #应用名称，也是服务名称
     name: springcloud-client80
 eureka:
   instance:
     hostname: localhost
+    #5秒心跳时间
     lease-renewal-interval-in-seconds: 5
+    #15秒无联系则判断挂掉准备卸载实例id
     lease-expiration-duration-in-seconds: 15
+    #实例id,一个服务可以容纳多个实例，多个实例完成相同服务，负载均衡调配
     instance-id: ${spring.application.name}
+    #在localhost:80     hover实例id名称显示实例ip地址
     prefer-ip-address: true
   client:
     service-url:
+      #注册到集群的3个服务端
       defaultZone: http://admin:123456@eureka7001.com:7001/eureka/,http://admin:123456@eureka7002.com:7002/eureka/,http://admin:123456@eureka7003.com:7003/eureka/
     enabled: true
+    #向注册中心注册自己
     register-with-eureka: true
+    #从Eureka Server获取注册的服务信息
     fetch-registry: true

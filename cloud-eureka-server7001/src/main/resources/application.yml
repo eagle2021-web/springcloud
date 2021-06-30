@@ -24,6 +24,7 @@ eureka:
   server:
     #true开启自我保护机制
     enable-self-preservation: true
+    #60秒执行一次，驱逐不健康的（挂掉）的服务实例id
     eviction-interval-timer-in-ms: 60000
 #server:
 #  port: 7001
