@@ -1,0 +1,4 @@
+spring:
+  profiles:
+    active: info
+#    active: test #表示自定义开发环境

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: nacos-payment-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.200.156:8848
+
+server:
+  port: 83
+
+#消费者将要去访问的微服务名称（注册进nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+        #PREFER_HOST_MODE
