@@ -1,13 +1,11 @@
-package springcloud;
+package com.eagle.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class Main8401 {
+public class Main1111 {
     public static void main(String[] args) {
-        SpringApplication.run(Main8401.class,args);
+        SpringApplication.run(Main1111.class,args);
     }
 }

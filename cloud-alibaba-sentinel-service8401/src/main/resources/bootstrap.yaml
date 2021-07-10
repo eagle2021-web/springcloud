@@ -1,7 +1,3 @@
-#server:
-#  port: 8401
-#
-#spring:
 #nacos配置
 server:
   port: 8401

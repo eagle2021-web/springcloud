@@ -15,6 +15,7 @@
         <module>cloud-alibaba-consumer-nacos-order83</module>
         <module>cloud-alibaba-config-nacos-client3377</module>
         <module>cloud-alibaba-sentinel-service8401</module>
+        <module>aaa</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -63,6 +64,19 @@
                 <version>2.2.0.RELEASE</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-config -->
+            <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.1.RELEASE</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
